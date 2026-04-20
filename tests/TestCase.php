@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace IllumaLaw\HealthCheckPgvector\Tests;
+namespace IllumaLaw\HealthCheckOperations\Tests;
 
-use IllumaLaw\HealthCheckPgvector\HealthcheckPgvectorServiceProvider;
+use IllumaLaw\HealthCheckOperations\HealthcheckOperationsServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\Health\HealthServiceProvider;
+use TimoKoerber\LaravelOneTimeOperations\Providers\OneTimeOperationsServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -14,7 +15,13 @@ class TestCase extends Orchestra
     {
         return [
             HealthServiceProvider::class,
-            HealthcheckPgvectorServiceProvider::class,
+            OneTimeOperationsServiceProvider::class,
+            HealthcheckOperationsServiceProvider::class,
         ];
+    }
+
+    protected function defineDatabaseMigrations(): void
+    {
+        $this->loadMigrationsFrom(__DIR__ . '/../vendor/timokoerber/laravel-one-time-operations/database/migrations');
     }
 }
