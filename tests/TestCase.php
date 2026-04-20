@@ -22,6 +22,6 @@ class TestCase extends Orchestra
 
     protected function defineDatabaseMigrations(): void
     {
-        $this->loadMigrationsFrom(__DIR__.'/../vendor/timokoerber/laravel-one-time-operations/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../vendor/timokoerber/laravel-one-time-operations/database/migrations');
     }
 }

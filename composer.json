@@ -1,12 +1,11 @@
 {
     "name": "illuma-law/healthcheck-operations",
-    "description": "Focused operations extension health check for Spatie's Laravel Health package.",
+    "description": "Focused operations backlog health check for Spatie's Laravel Health package.",
     "keywords": [
         "illuma-law",
         "laravel",
         "health",
-        "operations",
-        "postgres"
+        "operations"
     ],
     "homepage": "https://github.com/illuma-law/healthcheck-operations",
     "license": "MIT",
