@@ -29,9 +29,9 @@ final class OperationsBacklogCheck extends Check
 
         $result = Result::make()
             ->meta([
-                'pending_count'        => $count,
+                'pending_count' => $count,
                 'oldest_pending_hours' => round($oldestAgeHours, 2),
-                'sample'               => $names,
+                'sample' => $names,
             ])
             ->shortSummary("{$count} pending");
 
