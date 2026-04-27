@@ -25,6 +25,7 @@ it('succeeds when there are no pending operations', function () {
 
 it('warns when there are recent pending operations', function () {
     File::put($this->opsDir.'/2023_01_01_000000_op.php', '<?php ');
+    File::put($this->opsDir.'/2023_01_01_000000_op.php', '<?php ');
 
     $result = OperationsBacklogCheck::new()->run();
 
@@ -33,6 +34,7 @@ it('warns when there are recent pending operations', function () {
 });
 
 it('fails when there are old pending operations', function () {
+    $path = $this->opsDir.'/2023_01_01_000000_old_op.php';
     $path = $this->opsDir.'/2023_01_01_000000_old_op.php';
     File::put($path, '<?php ');
 
